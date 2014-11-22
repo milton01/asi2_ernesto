@@ -6,7 +6,7 @@ class pedido extends CI_Controller {
     
     public function __construct() {
         parent::__construct();
-        //Carga modelos
+        //Carga modelos aca
         $this->load->model('pedido_model');
     }
     
