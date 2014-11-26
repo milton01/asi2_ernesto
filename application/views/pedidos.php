@@ -27,9 +27,9 @@
 							<thead>
 								<tr>
 									<th style="width: 100px;">Orden ID</th>
-									<th>Fecha de orden</th>
+									<th>Fecha de pedido</th>
 									<th>Forma de pago</th>
-									<th>Total orden</th>
+									<th>Total pedido</th>
 									<th>Status</th>
 									<th>Detalle</th>
 								</tr>
@@ -38,39 +38,39 @@
 								<tr>
 									<td><strong>#SNT0032</strong></td>
 									<td><span class="span span-info">May 01, 2014</span></td>
-									<td>Paypal</td>
+									<td>Contado</td>
 									<td><strong>&#36; 165.00</strong></td>
-									<td><span class="label label-warning">Pending Payment</span></td>
+									<td><span class="label label-warning">Pendiente de Pago</span></td>
 									<td><button class="btn btn-default btn-xs"><i class="fa fa-share"></i></button></td>
 								</tr>
 								<tr>
 									<td><strong>#SNT0024</strong></td>
 									<td><span class="span span-info">May 01, 2014</span></td>
-									<td>Credit Card</td>
+									<td>Credito</td>
 									<td><strong>&#36; 175.00</strong></td>
-									<td><span class="label label-success">Completed</span></td>
+									<td><span class="label label-success">Finalizado</span></td>
 									<td><button class="btn btn-default btn-xs"><i class="fa fa-share"></i></button></td>
 								</tr>
 								<tr>
 									<td><strong>#SNT0021</strong></td>
 									<td><span class="span span-info">May 01, 2014</span></td>
-									<td>Paypal</td>
+									<td>Contado</td>
 									<td><strong>&#36; 165.00</strong></td>
-									<td><span class="label label-success">Completed</span></td>
+									<td><span class="label label-success">Finalizado</span></td>
 									<td><button class="btn btn-default btn-xs"><i class="fa fa-share"></i></button></td>
 								</tr>
 								<tr>
 									<td><strong>#SNT0015</strong></td>
 									<td><span class="span span-info">May 01, 2014</span></td>
-									<td>Paypal</td>
+									<td>Contado</td>
 									<td><strong>&#36; 165.00</strong></td>
-									<td><span class="label label-danger">Canceled</span></td>
+									<td><span class="label label-danger">Rechazado</span></td>
 									<td><button class="btn btn-default btn-xs"><i class="fa fa-share"></i></button></td>
 								</tr>
 								<tr>
 									<td><strong>#SNT0011</strong></td>
 									<td><span class="span span-info">May 01, 2014</span></td>
-									<td>Paypal</td>
+									<td>Contado</td>
 									<td><strong>&#36; 165.00</strong></td>
 									<td><span class="label label-success">Completed</span></td>
 									<td><button class="btn btn-default btn-xs"><i class="fa fa-share"></i></button></td>
@@ -78,57 +78,57 @@
 								<tr>
 									<td><strong>#SNT0009</strong></td>
 									<td><span class="span span-info">May 01, 2014</span></td>
-									<td>Paypal</td>
+									<td>Contado</td>
 									<td><strong>&#36; 165.00</strong></td>
-									<td><span class="label label-success">Completed</span></td>
+									<td><span class="label label-success">Finalizado</span></td>
 									<td><button class="btn btn-default btn-xs"><i class="fa fa-share"></i></button></td>
 								</tr>
 								<tr>
 									<td><strong>#SNT0032</strong></td>
 									<td><span class="span span-info">May 01, 2014</span></td>
-									<td>Paypal</td>
+									<td>Contado</td>
 									<td><strong>&#36; 165.00</strong></td>
-									<td><span class="label label-warning">Pending Payment</span></td>
+									<td><span class="label label-warning">Pendiente de Pago</span></td>
 									<td><button class="btn btn-default btn-xs"><i class="fa fa-share"></i></button></td>
 								</tr>
 								<tr>
 									<td><strong>#SNT0024</strong></td>
 									<td><span class="span span-info">May 01, 2014</span></td>
-									<td>Credit Card</td>
+									<td>Credito</td>
 									<td><strong>&#36; 175.00</strong></td>
-									<td><span class="label label-success">Completed</span></td>
+									<td><span class="label label-success">Finalizado</span></td>
 									<td><button class="btn btn-default btn-xs"><i class="fa fa-share"></i></button></td>
 								</tr>
 								<tr>
 									<td><strong>#SNT0021</strong></td>
 									<td><span class="span span-info">May 01, 2014</span></td>
-									<td>Paypal</td>
+									<td>Credito</td>
 									<td><strong>&#36; 165.00</strong></td>
-									<td><span class="label label-success">Completed</span></td>
+									<td><span class="label label-success">Finalizado</span></td>
 									<td><button class="btn btn-default btn-xs"><i class="fa fa-share"></i></button></td>
 								</tr>
 								<tr>
 									<td><strong>#SNT0015</strong></td>
 									<td><span class="span span-info">May 01, 2014</span></td>
-									<td>Paypal</td>
+									<td>Contado</td>
 									<td><strong>&#36; 165.00</strong></td>
-									<td><span class="label label-danger">Canceled</span></td>
+									<td><span class="label label-danger">Rechazado</span></td>
 									<td><button class="btn btn-default btn-xs"><i class="fa fa-share"></i></button></td>
 								</tr>
 								<tr>
 									<td><strong>#SNT0011</strong></td>
 									<td><span class="span span-info">May 01, 2014</span></td>
-									<td>Paypal</td>
+									<td>Contado</td>
 									<td><strong>&#36; 165.00</strong></td>
-									<td><span class="label label-success">Completed</span></td>
+									<td><span class="label label-success">Finalizado</span></td>
 									<td><button class="btn btn-default btn-xs"><i class="fa fa-share"></i></button></td>
 								</tr>
 								<tr>
 									<td><strong>#SNT0009</strong></td>
 									<td><span class="span span-info">May 01, 2014</span></td>
-									<td>Paypal</td>
+									<td>Contado</td>
 									<td><strong>&#36; 165.00</strong></td>
-									<td><span class="label label-success">Completed</span></td>
+									<td><span class="label label-success">Finalizado</span></td>
 									<td><button class="btn btn-default btn-xs"><i class="fa fa-share"></i></button></td>
 								</tr>
 							</tbody>
