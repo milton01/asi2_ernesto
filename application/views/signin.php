@@ -30,8 +30,8 @@
                 <h4 class="nomargin">Iniciar sesión</h4>
                 <p class="mt5 mb20">Inicia sesión para acceder a su cuenta.</p>
 
-                <input type="text" class="form-control uname" placeholder="Nombre de usuario" />
-                <input type="password" class="form-control pword" placeholder="Contraseña" />
+                <input type="text" name="nombre" class="form-control uname" placeholder="Nombre de usuario" />
+                <input type="password" name="password" class="form-control pword" placeholder="Contraseña" />
                 <a href=""><small>Olvido su contraseña?</small></a> | <?php echo anchor('master/registro', '<small>Registrate</small>', 'title="Registrate"');?>
                 <button class="btn btn-success btn-block">Iniciar sesión</button>
 
