@@ -26,7 +26,7 @@
 						<table class="table table-th-block table-success">
 							<thead>
 								<tr>
-									<th style="width: 100px;">Orden ID</th>
+									<th style="width: 100px;">Numero de pedido</th>
 									<th>Fecha de pedido</th>
 									<th>Forma de pago</th>
 									<th>Total pedido</th>

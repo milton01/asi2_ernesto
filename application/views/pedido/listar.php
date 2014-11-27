@@ -11,7 +11,7 @@
                         <th width="5%">#</th>
                         <th width="10%">Cod. Cliente</th>
                         <th>Cliente</th>
-                        <th width="10%">Cod. Pedido</th>
+                        <th width="10%">Pedido</th>
                         <th width="20%">Monto</th>
                         <th width="5%">Estado</th>
                         <th width="20%">Opciones</th>
@@ -28,10 +28,10 @@
                     <td>'.$row->cl_id.'</td>
                     <td>'.$row->cl_nombre.'</td>
                     <td>'.$row->pd_id.'</td>
-                    <td>'.$row->pd_monto.'</td>
+                    <td>$ '.$row->pd_monto.'</td>
                     <td>'.$row->pd_status.'</td>                
                     <td>
-                        '.anchor('pedido/despachar/'.$row->pd_id, 'Despachar', 'title="Despachar pedido" class="btn btn-success btn-sm"').'
+                        '.anchor('pedido/despachar/'.$row->pd_id, 'Detalle', 'title="Despachar pedido" class="btn btn-success btn-sm"').'
                         '.anchor('pedido/rechazar/'.$row->pd_id, 'Rechazar', 'title="Rechazar pedido" class="btn btn-danger btn-sm"').'
                     </td>
                 </tr>';

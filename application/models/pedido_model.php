@@ -25,7 +25,7 @@ class Pedido_model extends CI_Model{
                                     cl.cliente_id AS cl_id,
                                     cl.nombre_c AS cl_nombre,
                                     (select SUM(dp.cantidad * pr.preciov) from detalle_pedido dp natural join producto pr where dp.pedido_id = pd.id) as pd_monto,
-                                    (select st.nombre from `estatus` st WHERE st.id = pd.id) AS pd_status
+                                    (select st.descripcion from `estatus` st WHERE st.id = pd.id) AS pd_status
                                     FROM 
                                     pedido pd NATURAL JOIN cliente cl 
                                     WHERE 
@@ -43,12 +43,16 @@ class Pedido_model extends CI_Model{
         $query = $this->db->query("SELECT
                                     dp.id AS dp_id,
                                     pr.codigo AS pr_codigo,
-                                    pr.descripcion AS pr_descripcion,
+                                    concat (cat.descripcion,' ',                                     
+                                    mar.nombre,' ', 
+                                    pr.descripcion) AS nombre_prod,
                                     dp.cantidad AS dp_cantidad
-                                   FROM 
-                                    detalle_pedido dp, producto pr
-                                   WHERE
+					FROM 
+                                    detalle_pedido dp, producto pr, marca mar, categoriap cat 
+					WHERE
                                     dp.codigoprod = pr.codigo AND
+                                    mar.id = pr.marcaid AND
+                                    cat.id = pr.categoriaid AND                                    
                                     dp.pedido_id = ?", $data);
         //Devolvemos al controlador los datos
         if ($query->num_rows() > 0) return $query; 
