@@ -28,7 +28,7 @@ class Factura extends CI_Controller {
 	 * crear nueva factura
 	 * @return view
 	 */
-	public function crear()
+	public function nuevo()
 	{
 		$this->factura_model->fecha_v = date('Y-m-d');
 		$this->factura_model->fecha_p = date('Y-m-d');
