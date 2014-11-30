@@ -13,7 +13,7 @@
                         <th>Cliente</th>
                         <th width="10%">Pedido</th>
                         <th width="20%">Monto</th>
-                        <th width="5%">Estado</th>
+                        <th width="10%">Estado</th>
                         <th width="20%">Opciones</th>
                     </tr>
                 </thead>

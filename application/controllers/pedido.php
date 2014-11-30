@@ -144,7 +144,7 @@ class pedido extends CI_Controller {
 
             }
             //Actualiza el estado del pedido a rechazado
-            $pedido_actualizado = $this->pedido_model->estado_pedido($pd_id, 3);
+            $pedido_actualizado = $this->pedido_model->estado_pedido($pd_id, 4);
             $this->db->trans_complete();
             
             //Retorna a principal con cambios guardados

@@ -25,11 +25,10 @@ class Pedido_model extends CI_Model{
                                     cl.cliente_id AS cl_id,
                                     cl.nombre_c AS cl_nombre,
                                     (select SUM(dp.cantidad * pr.preciov) from detalle_pedido dp natural join producto pr where dp.pedido_id = pd.id) as pd_monto,
-                                    (select st.descripcion from `estatus` st WHERE st.id = pd.id) AS pd_status
-                                    FROM 
-                                    pedido pd NATURAL JOIN cliente cl 
-                                    WHERE 
-                                    pd.id = 1;", $data);
+                                    (select st.descripcion from estatus st WHERE st.id = pd.status_id) AS pd_status
+                                  FROM 
+                                    pedido pd JOIN cliente cl 
+                                  WHERE pd.status_id = ?;", $data);
         //Devolvemos al controlador los datos
         if ($query->num_rows() > 0) return $query; 
     }
