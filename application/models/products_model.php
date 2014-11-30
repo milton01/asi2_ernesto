@@ -32,5 +32,32 @@ function get_product($id) {
 		return $result;
 	}
 
+function pedido($id_cliente)
+{
+	$datestring = "%Y-%m-%d";
+	$time = time();
+	$fecha=mdate($datestring, $time);
+
+echo mdate($datestring, $time);
+	$data1 = array(
+			'fecha_p' => $fecha,
+			'cliente_id' => $id_cliente
+			// para quitar los acentos	    
+		);
+	$this->db->insert('pedido', $data1);
+		$id_ped = $this->db->insert_id();
+		foreach($cart as $item){ 
+	$data = array(
+			'codigopro' => $item['id'],
+			'cantidad' => $item['qty'],
+			'peido_id' => $id_ped
+			 // para quitar los acentos	    
+		);
+		$this->db->insert('detalle_pedido', $data);		 
+    } // fin de
+}
+
+
+
     	  
 }

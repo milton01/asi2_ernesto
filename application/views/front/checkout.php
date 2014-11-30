@@ -10,14 +10,15 @@
 <div id="checkout">
 <?=form_open('products/checkout', $attributes);
 
-       $name = array('name'=>'name', 'id'=>'name','placeholder'=>'Nombre y apellidos','value'=>set_value('name'), 'size'=> '35',);
-       $phone = array('name'=>'phone', 'id'=>'phone','placeholder'=>'Teléfono o celular','value'=>set_value('phone'), 'size'=> '35',);
-	   $address = array('name'=>'address','id'=>'address','placeholder'=>'Ciudad y dirección','value'=>set_value('address'), 'size'=> '48',);
-	   $email = array('name'=>'email', 'id'=>'email','placeholder'=>'Correo electronico', 'value'=>set_value('email'), 'size'=> '48',);
-         $dui = array('name'=>'dui', 'id'=>'dui','placeholder'=>'Dui', 'value'=>set_value('dui'), 'size'=> '48',);  
+      $formaP = array('name'=>'formaP', 'id'=>'formaP','placeholder'=>'Forma de pago','value'=>set_value('name'), 'size'=> '35',);
+      $phone = array('name'=>'phone', 'id'=>'phone','placeholder'=>'Teléfono o celular','value'=>set_value('phone'), 'size'=> '35',);
+	$address = array('name'=>'address','id'=>'address','placeholder'=>'Ciudad y dirección','value'=>set_value('address'), 'size'=> '48',);
+	$email = array('name'=>'email', 'id'=>'email','placeholder'=>'Correo electronico', 'value'=>set_value('email'), 'size'=> '48',);
+      $dui = array('name'=>'dui', 'id'=>'dui','placeholder'=>'Dui', 'value'=>set_value('dui'), 'size'=> '48',);
  ?> 
-      <div><?=form_label('Nombre');?></div>                 
-      <div><?=form_input($name);?></div> 
+
+      <div><?=form_label('Forma de pago');?></div>                 
+      <div><?=form_input($formaP);?></div> 
       <div><?=form_label('Celular');?></div>  
       <div><?=form_input($phone);?></div>
       <div><?=form_label('Dui');?></div>  

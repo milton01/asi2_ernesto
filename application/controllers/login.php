@@ -6,16 +6,22 @@ class Login extends CI_Controller{
    { 
 		parent::__construct();
 		$this ->load->model('Login_Model');	
+		$this ->load->model('Products_Model');
+		$this->load->library(array('pagination', 'cart', 'form_validation','email', 'table'));
+		$this->load->helper('text');	
+       
 			
    }
    
 function index()
 	{  // reglas de validación
+		$username = $this->input->post('username');
+	    $password = md5($this->input->post('password'));
        $this->form_validation->set_rules('username', 'Usuario', 'required|xss_clean|callback__valid_login');
-	   $this->form_validation->set_rules('password', 'Contraseña','|md5|required|xss_clean');
+	   //$this->form_validation->set_rules('password', 'Contraseña','|md5|required|xss_clean');
 	   
 	    $this->form_validation->set_message('required', 'el campo %s es requerido');
-        $this->form_validation->set_message('_valid_login', 'El usuario o contraseña son incorrectos');
+            $this->form_validation->set_message('_valid_login', 'El usuario o contraseña son incorrectos');
 	   
 	    $this -> form_validation -> set_error_delimiters('<ul><li>', '</li></ul>');
      
@@ -26,20 +32,41 @@ function index()
 			$this->load->view('admin/login',$data);
 		}
 		else{
-						 
-			 $username = $this->input->post('username');
+			$rol=$this->Login_Model->validad_rol($username,$password);
+			$id_cliente = $this->Login_Model->id_cli($username, $password);
+			$this->session->set_userdata('id_cliente', $id_cliente);
+
+			if ($rol==2) {
+				$pagination = 3;
+//$config['base_url'] = base_url().'index.php/products/index'; //utilizar esta url si no la reconoce sin el index.php	
+        $config['base_url'] = base_url().'products/index';   
+        $config['total_rows'] = $this->db->get('producto')->num_rows();
+        $config['per_page'] = $pagination;
+        $config['num_links'] = 20; 
+        $config['next_link'] = 'Siguiente »';
+        $config['prev_link'] = '« Anterior';
+	
+        $this->pagination->initialize($config);
+        $username = $this->input->post('username');
 			 $data_user = $array = array('user'=> $username, 'logued_in' => TRUE);
 			 
 		// asignamos dos datos a la sesión --> (username y logued_in)									 
 			 $this->session->set_userdata($data_user); 
                  
-			$data['title'] = 'Administrador'; 
+			 
 			$data['user'] = $username;  // = $this->session->userdata('user');
+			$data['id'] =$id_cliente;
 			
-			$this->load->view('admin/header_admin',$data);
-            $this->load->view('admin/admin');
-			$this->load->view('front/footer');
-				  
+      	
+	$data['title'] = 'Altuve'; 
+	$data['results'] = $this->Products_Model->get_products($pagination, $this->uri->segment(3));
+		
+	$this->load->view('front/header',$data);
+	$this->load->view('front/content');	
+	$this->load->view('front/footer');
+
+
+				 } 
 				
 		}
   }
@@ -48,22 +75,20 @@ function _valid_login($username,$password)
 	{ 
 	    $username = $this->input->post('username');
 	    $password = md5($this->input->post('password'));
-        return $this->Login_Model->valid_user($username,$password);
+            return $this->Login_Model->valid_user($username,$password);
 	}
 
 function valid_login_ajax(){
-	//verificamos si la petición es via ajax
-if($this->input->is_ajax_request()){
+    //verificamos si la petición es via ajax
+    if($this->input->is_ajax_request()){
+        if($this->input->post('username')!==''){
+            $username = $this->input->post('username');
+            $this->Login_Model->valid_user_ajax($username);
 
-		 if($this->input->post('username')!==''){
-		    $username = $this->input->post('username');
-			 
-		$this->Login_Model->valid_user_ajax($username);	
-
-	    }
-}else{
+        }
+    }else{
 		redirect('login');
-}
+    }
 
 } // fin del método valid_login_ajax
 	

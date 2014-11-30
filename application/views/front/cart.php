@@ -28,7 +28,7 @@
 					<?=anchor('products/remove/'.$item['rowid'],'X');?>
 				</td>
 				  
-	</tr>
+</tr>
 			
 		<?php endforeach; ?>
 		<tr>

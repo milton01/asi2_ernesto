@@ -6,7 +6,9 @@ class Products extends CI_Controller {
 		parent::__Construct();
 		$this ->load->model('Products_Model');
 		$this->load->library(array('pagination', 'cart', 'form_validation','email', 'table'));
-		$this->load->helper('text');	
+		$this->load->helper('text');
+		$this->load->helper('date');
+
        }
 	
 function index(){
@@ -174,84 +176,7 @@ function cart($message=NULL){
   } 
 // Método para enviar el pedido al correo del cliente y el administrador del sitio
 function checkout(){
-	 	
-	  $data['title'] = 'Solicitar Pedido'; 
-	   
-       $this->form_validation->set_rules('name', 'Nombre', 'required');
-	   $this->form_validation->set_rules('phone', 'Celular', 'required|numeric');
-	   $this->form_validation->set_rules('address', 'Ciudad y dirección', 'required');
-	   $this->form_validation->set_rules('email', 'Email', 'required|valid_email');	
-	   
-	   $this->form_validation->set_message('required', 'el campo %s es requerido');
-	   $this->form_validation->set_message('valid_email', 'El email no es válido');
-          
-           $this -> form_validation -> set_error_delimiters('<ul><li>', '</li></ul>');
-		
-		
-	if ($this->form_validation->run() == FALSE)
-		{
-			$this->load->view('front/header', $data);   
-			$this->load->view('front/checkout');
-			$this->load->view('front/footer');
-			
-		    }else{
-		    			
-			$name = $this->input->post('name');
-			$mobil = $this->input->post('phone');
-			$email = $this->input->post('email');
-			$dui = $this->input->post('dui');
-						
-if($cart=$this->cart->contents()){
-$this->table->set_heading('Portatil', 'Detalle','Cantidad','Precio', 'Total'); // la tabla que irá en el correo
-
-
-	foreach($cart as $item){
-		$selected = '';		
-	 if ($this->cart->has_options($item['rowid'])) {
-			foreach ($this->cart->product_options($item['rowid']) as $option => $value) {
-						        $selected = $option . ": <em>" . $value . "</em>";
-						  }
-	  				}
-		       
-			  $price = ($item['price']*$item['qty']); 
-     		  $this->table->add_row($item['name'], $selected, $item['qty'], $price);
-			  					  
-			 } // fin del foreach
-		 
- $this->table->add_row('Total', '', '', '', $this->cart->format_number($this->cart->total()));
-			 
-	$message = 'Señor(a): '.$name.br(1).'Celular: '.$mobil.br(1).'Email: '.$email.br(2).'Detalles del pedido';  	          					 
-    $pedido = $message.$this->table->generate();  // concatenamos el mensaje con la tabla que contiene el pedido
-    		
-    /*$config = array('protocol'=>'smtp', 
-	                'smtp_host'=>'ssl://smtp.googlemail.com', 
-	                'smtp_user'=>'mi-correo@gmail.com', // colocamos nuestra propia cuenta de Gmail
-					'smtp_pass'=>'mi-password', // contraseña de la cuenta Gmail					
-					'smtp_port'=>'465', 
-					'smtp_timeout'=>'6', 
-                    'mailtype'=>'html',					
-					);
-					
-   $this->email->initialize($config);
-	
-			// Datos para enviar el correo
-			$this->email->from('admin-tienda@gmail.com', 'Tienda virtual');
-			$this->email->to($email);
-			$this->email->subject('Pedido de Computador(es) Portatil(es)');				
-			$this->email->message($pedido); 
-			$this->email->send(); // envia el correo */
-			
-			$data['title']='Detalles del Pedido';
-			$data['pedido']=$pedido;
-	               //  echo $this->email->print_debugger(); exit;        					
-		     $this->load->view('front/header', $data);
-			 $this->load->view('front/success');
-			 $this->load->view('front/footer');
-			 
-            }  
-
-	    } // fin del else 
-
-    } // fin del método 
-
+	$id_cli = '12';
+	$this->Products_Model->pedido($id_cli);
 } 
+}
