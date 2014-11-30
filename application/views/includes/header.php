@@ -10,7 +10,9 @@
   <title><?=$title;?></title>
 
   <link href="<?=base_url();?>css/style.default.css" rel="stylesheet">
-
+  <link rel="stylesheet" href="//cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css">
+<script src="<?=base_url();?>js/jquery-1.10.2.min.js"></script>
+<script src="<?=base_url();?>js/jquery-migrate-1.2.1.min.js"></script>
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
   <script src="js/html5shiv.js"></script>

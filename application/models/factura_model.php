@@ -45,6 +45,15 @@ class Factura_model extends CI_Model {
 		: die('Cero registros encontrados');
 	}
 
+	public function pedido_realizado()
+	{
+		$resultado = $this->db->get("pedido_realizado");
+
+		return ( is_object( $resultado ) && $resultado->num_rows() > 0 ) 
+		? $resultado
+		: die('Cero registros encontrados');
+	}
+
 	/**
 	 * Registra nueva factura
 	 * @return int id nueva factura

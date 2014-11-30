@@ -14,7 +14,14 @@ class Factura extends CI_Controller {
      */
 	public function index()
 	{
-		$data['pedidos'] = $this->factura_model->mostrar();
+		$data['pedidos'] = $this->factura_model->pedido_realizado();
+		 //Se preparan los parametros de la vista
+        $data['main']='factura/listar';
+        $data['title']='Altuve | Facturas';
+        $data['query'] = $data;
+        
+        //Se carga la vista con plantilla
+        $this->load->view('includes/template',$data);
 
 	}
 	/**
