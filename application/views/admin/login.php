@@ -35,11 +35,11 @@ $('#username').blur(function(){
 	  if(user==''){
 	    	
 	    $('#msg_username').html('El Usuario es requerido').css('color','red');
-	    	
+	    	alert(1);
 	    }else{
 		
 		$.post('login/valid_login_ajax', {username : user}, function(data){
-            					
+            				
 				 if(data!=1){
 				 
 	                    $('#msg_username').html('El Usuario es Incorrecto').css('color','red');
@@ -129,10 +129,8 @@ $('#password').blur(function(){
 	
 <?php $attributes = array('id' => 'form_login'); 
 
-    $username = array('name'=>'username', 'id'=>'username','class'=>'input','placeholder'=>'Usuario',
-                      'value'=>set_value('username'), 'size'=> '35',);
-    $password = array('name'=>'password', 'id'=>'password','class'=>'input','placeholder'=>'Contraseña',
-                      'type'=>'password', 'size'=> '35',);
+    $username = array('name'=>'username', 'id'=>'username','class'=>'input','placeholder'=>'Usuario','value'=>set_value('username'), 'size'=> '35',);
+    $password = array('name'=>'password', 'id'=>'password','class'=>'input','placeholder'=>'Contraseña','type'=>'password', 'size'=> '35',);
 
 if(validation_errors()):	   
  ?> 
@@ -146,9 +144,7 @@ if(validation_errors()):
 <div class="padding"><?=form_label('Contraseña')?></div>
 <div id='msg_password' class="padding"></div> 
 <div class="padding"><?=form_input($password)?></div>
-
-<?=form_submit(array('name' => 'submit','class'=>'submit',
-                                               'value' => 'Acceder'))?>
+<?=form_submit(array('name' => 'submit','class'=>'submit','value' => 'Acceder'))?>
 <?=form_close();?>
 
 </div><!-- col-sm-5 -->

@@ -19,34 +19,38 @@ function valid_user($username, $password)
     }
 }
 
-function validad_rol($username, $password)
+function validar_rol($username, $password)
 {
-	$this->db->where('nombre', $username);
-	$this->db->where('password', $password);
-  
-  	$query = $this->db->get('usuario')->result();
-
-  	foreach ($query as $query){
-	  	
-		   $rol = $query->tipo_usuario;			 
-	       	   	       
-     }
-  	return $rol;
+    $this->db->select();        
+    $this->db->from('usuario');  
+    $this->db->where('nombre', $username);
+    $this->db->where('password', $password);
+    $query = $this->db->get();
+    /*$this->db->where('nombre', $username);
+    $this->db->where('password', $password);  
+    $query = $this->db->get('usuario')->result();
+    foreach ($query as $query){
+        $rol = $query->tipo;
+    }*/
+    $row = $query->row();
+    return $row->tipo;
 }
 
-function id_cli($username, $password)
+function id_usuario($username, $password)
 {
-	$this->db->where('nombre', $username);
-	$this->db->where('password', $password);
-  
-  	$query = $this->db->get('usuario')->result();
-
-  	foreach ($query as $query){
-	  	
-		   $id_cli = $query->id_cliente;			 
-	       	   	       
-     }
-  	return $id_cli;
+    $this->db->select();        
+    $this->db->from('usuario');  
+    $this->db->where('nombre', $username);
+    $this->db->where('password', $password);
+    $query = $this->db->get();
+    /*$this->db->where('nombre', $username);
+    $this->db->where('password', $password);  
+    $query = $this->db->get('usuario')->result();
+    foreach ($query as $query){	  	
+        $id = $query->id;			 
+    }*/
+    $row = $query->row();
+    return $row->id;
 }
 
 function valid_user_ajax($username){ 
