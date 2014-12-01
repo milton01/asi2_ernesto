@@ -39,7 +39,7 @@ class Master extends CI_Controller {
                     $data['title'] = 'Altuve | Bienvenido';
                     //Se carga la vista con plantilla
                     $this->load->view('includes/template', $data);
-                }
+                }                
         }
     }
 
