@@ -34,7 +34,7 @@ class Master extends CI_Controller {
                 // asignamos dos datos a la sesión --> (username y logued_in)									 
                 $this->session->set_userdata($data_user);
                 //Se define que vista
-                    $data['main'] = 'pedidos';
+                    $data['main'] = 'menu';
                     //Se preparan los parametros de la vista
                     $data['title'] = 'Altuve | Bienvenido';
                     //Se carga la vista con plantilla

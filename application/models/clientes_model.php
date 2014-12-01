@@ -10,7 +10,7 @@ class Clientes_model extends CI_Model{
 }*/
 
 function get_clientes(){
-   $this->db->select('nombre,password,tipo_usuario');
+   $this->db->select('nombre,password,tipo');
    $query = $this->db->get('usuario');
    return $query->result();
    
