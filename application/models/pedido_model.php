@@ -27,7 +27,7 @@ class Pedido_model extends CI_Model{
                                     (select SUM(dp.cantidad * pr.preciov) from detalle_pedido dp natural join producto pr where dp.pedido_id = pd.id) as pd_monto,
                                     (select st.descripcion from estatus st WHERE st.id = pd.status_id) AS pd_status
                                   FROM 
-                                    pedido pd JOIN cliente cl 
+                                    pedido pd INNER JOIN cliente cl ON pd.cliente_id=cl.cliente_id
                                   WHERE pd.status_id = ?;", $data);
         //Devolvemos al controlador los datos
         if ($query->num_rows() > 0) return $query; 
