@@ -63,58 +63,50 @@
 			<!-- BEGIN SIDEBAR LEFT -->
 			<div class="sidebar-left sidebar-nicescroller">
 				<ul class="sidebar-menu">
-                                    <li>								
-					</a>
-					<?php echo anchor('master', 'Inicio');?>
+                                    <li>
+					<?php echo anchor('master', 'Confirmacion de clientes');?>
                                     </li>
-                                    
-                                            <li>
-                                                        <?php echo anchor('pedido', 'Ver pedidos');?>
-							<i class="fa fa-desktop icon-sidebar"></i>
-							<i class="fa fa-angle-right chevron-icon-sidebar"></i>							
-							</a>
-                                            </li>
-                                            <li>    
-                                                <?php echo anchor('ruta', 'Llenar camion');?>
-                                                <i class="fa fa-desktop icon-sidebar"></i>
-                                                <i class="fa fa-angle-right chevron-icon-sidebar"></i>
-                                                </a>
-
-                                                </a>  
-							
-                                            </li>
-                                            <li>
-                                                 <i class="fa fa-desktop icon-sidebar"></i>
-							<i class="fa fa-angle-right chevron-icon-sidebar"></i>
-                                                        <?php echo anchor('ruta', 'Compras');?>
-                                            </li>
-                                            <li>                                                
-                                              <i class="fa fa-desktop icon-sidebar"></i>
-							<i class="fa fa-angle-right chevron-icon-sidebar"></i>
-                                                            <?php echo anchor('ruta', 'Facturacion');?>  
-					</li>
-					<li>
-						<a href="#fakelink">
-							<i class="fa fa-bar-chart-o icon-sidebar"></i>
-							<i class="fa fa-angle-right chevron-icon-sidebar"></i>
-							Reportes
-						</a>						
-					</li>
-					<li class="active selected">
-						<a href="#fakelink">
-							<i class="fa fa-shopping-cart icon-sidebar"></i>
-							<i class="fa fa-angle-right chevron-icon-sidebar"></i>
-							Catalogos
-						</a>
-						<ul class="submenu visible">
-							<li class="active selected"><a href="store-product-column.html">Catálogo de productos</a></li>
-							<li><a href="store-shopping-cart.html">Carrito de compras</a></li>
-							<li><a href="store-checkout.html">Clientes</a></li>
-							<li><a href="store-orderlist.html">Empleados</a></li>
-                                                        <li><a href="store-orderlist.html">Estados</a></li>
-						</ul>
-					</li>
-					
+                                    <li>
+					<?php echo anchor('master', 'Carrito de compras');?>
+                                    </li>                               <li>
+					<?php echo anchor('pedido', 'Ver pedido');?>
+                                    </li>
+                                   <li class="inactive">
+                                            <?php echo anchor('ruta', 'Llenar camion.................>');?>
+                                        <ul class="submenu visible">
+                                            <li><?php echo anchor('ruta', 'Agregar pedidos a la ruta');?></li>
+                                            <li><?php echo anchor('ruta', 'Facturacion de pedidos');?></li>
+                                        </ul>
+                                    </li>
+                                    <li class="active selected">
+                                            <?php echo anchor('ruta', 'Liquidacion de rutas');?>
+                                    </li>
+                                    <li class="inactive">
+                                            <?php echo anchor('ruta', 'Ventas directas...........>');?> 
+                                        <ul class="submenu visible">
+                                            <li><?php echo anchor('ruta', 'Agregar pedido');?></li>
+                                            <li><?php echo anchor('ruta', 'Facturacion de pedido');?></li>
+                                        </ul>
+                                    </li>
+                                    <li class="inactive">
+                                            <?php echo anchor('ruta', 'Reportes...................>');?>
+                                        <ul class="submenu visible">
+                                            <li><?php echo anchor('ruta', 'Ventas por ruta');?></li>
+                                            <li><?php echo anchor('ruta', 'Ventas por dia');?></li>
+                                            <li><?php echo anchor('ruta', 'Ventas por mes');?></li>
+                                            <li><?php echo anchor('ruta', 'Ventas por año');?></li>
+                                        </ul>
+                                    </li>
+                                    <li class="inactive">
+                                            <?php echo anchor('ruta', 'Mantenimientos........>');?>
+                                        <ul class="submenu visible">
+                                            <li><?php echo anchor('ruta', 'Registrar cliente');?></li>
+                                            <li><?php echo anchor('ruta', 'Registrar empleado');?></li>
+                                            <li><?php echo anchor('ruta', 'Registrar proveedor');?></li>
+                                            <li><?php echo anchor('ruta', 'Status para diferentes tablas');?></li>
+                                            <li><?php echo anchor('ruta', 'Tipo de movimiento de inventario');?></li>
+                                        </ul>
+                                    </li>
 				</ul>
 			</div><!-- /.sidebar-left -->
 			<!-- END SIDEBAR LEFT -->
