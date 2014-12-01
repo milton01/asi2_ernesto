@@ -19,7 +19,7 @@ if($logued === FALSE || $session === FALSE ){ // por seguridad hacemos doble ver
   <link rel="stylesheet" type="text/css" href="<?=base_url();?>assets/template/style.css"/>
 
   <title>Altuve</title>
-
+  <script src="<?=base_url();?>assets/js/jquery-1.10.2.min.js"></script>
   <link href="<?=base_url();?>assets/css/style.default.css" rel="stylesheet">
   <link href="<?=base_url();?>assets/css/jquery.datatables.css" rel="stylesheet">
 
