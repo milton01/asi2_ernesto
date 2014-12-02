@@ -44,12 +44,7 @@ class Factura_model extends CI_Model {
 		? $resultado
 		: die('Cero registros encontrados');
 	}
-	/**
-	 * Busca todos los pedidos registrados en el sistema y enlaza la informacion 
-	 * correspondiente a dicho pedido en las diferentes tablas de la base
-	 * desde la vista pedido_realizado
-	 * @return Object
-	 */
+
 	public function pedido_realizado()
 	{
 		$resultado = $this->db->get("pedido_realizado");
