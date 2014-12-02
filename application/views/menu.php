@@ -17,15 +17,11 @@
 					<!-- End Logo brand -->
 					
 					<div class="top-nav-content">
-						
 						<!-- Begin button sidebar left toggle -->
 						<div class="btn-collapse-sidebar-left">	
 							<i class="fa fa-long-arrow-right icon-dinamic"></i>
 						</div><!-- /.btn-collapse-sidebar-left -->
-						<!-- End button sidebar left toggle -->
-						
-						
-						
+                                                
 						<!-- Begin button nav toggle -->
 						<div class="btn-collapse-nav" data-toggle="collapse" data-target="#main-fixed-nav">
 							<i class="fa fa-plus icon-plus"></i>
@@ -35,14 +31,13 @@
 						
 						<!-- Begin user session nav -->
 						<ul class="nav-user navbar-right">
-                                                    <img src="<?=base_url()?><?=base_url()?>assets/img/avatar/avatar-1.jpg" />
-                                                    Bienvenid@, <strong>Veronica López</strong>
+                                                    <img src="<?=base_url()?>assets/img/avatar/avatar-1.jpg" />
+                                                            Bienvenid@, <strong>Veronica López</strong>
 							<li class="dropdown">
-                                                            <a href="#fakelink" class="dropdown-toggle" data-toggle="dropdown"></a>
-								
+                                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"></a>								
                                                                 <ul class="dropdown-menu square primary margin-list-rounded with-triangle">
-                                                                    <li><a href="#fakelink">Cambiar password</a></li>								
-								<li><a href="login.html">Cerrar sesion</a></li>
+                                                                    <li><?php echo anchor('cambio_password', 'Cambiar Password');?></li>							
+                                                                    <li><?php echo anchor('master', 'Cerrar session');?></li>							
                                                                 </ul>
 							  </a>
 							</li>
@@ -110,114 +105,16 @@
                                             <li><?php echo anchor('registro', 'Registrar cliente');?></li>
                                             <li><?php echo anchor('registro/agregar_empleado', 'Registrar empleado');?></li>
                                             <li><?php echo anchor('registro/agregar_proveedor', 'Registrar proveedor');?></li>
-                                            <li><?php echo anchor('ruta', 'Status para diferentes tablas');?></li>
-                                            <li><?php echo anchor('ruta', 'Tipo de movimiento de inventario');?></li>
+                                            <li><?php echo anchor('registro/agregar_estatus', 'Status para diferentes tablas');?></li>
+                                            <li><?php echo anchor('registro/agregar_tipo_mov_inventario', 'Tipo de movimiento de inventario');?></li>
                                         </ul>
                                     </li>
       </ul>
     </div><!-- leftpanelinner -->
   </div>
 				
-			</div><!-- /.sidebar-left -->
-			<!-- END SIDEBAR LEFT -->
 			
 			
-			
-			<!-- BEGIN SIDEBAR RIGHT HEADING -->
-			<div class="sidebar-right-heading">
-				<ul class="nav nav-tabs square nav-justified">
-				  <li class="active"><a href="#online-user-sidebar" data-toggle="tab"><i class="fa fa-comments"></i></a></li>
-				  <li><a href="#notification-sidebar" data-toggle="tab"><i class="fa fa-bell"></i></a></li>
-				  <li><a href="#task-sidebar" data-toggle="tab"><i class="fa fa-tasks"></i></a></li>
-				  <li><a href="#setting-sidebar" data-toggle="tab"><i class="fa fa-cogs"></i></a></li>
-				</ul>
-			</div><!-- /.sidebar-right-heading -->
-			<!-- END SIDEBAR RIGHT HEADING -->
-			
-			
-			
-			<!-- BEGIN SIDEBAR RIGHT -->
-			<div class="sidebar-right sidebar-nicescroller">
-				<div class="tab-content">
-				  <div class="tab-pane fade in active" id="online-user-sidebar">
-					<ul class="sidebar-menu online-user">
-						<li class="static">ONLINE USERS</li>
-					</ul>
-				  </div>
-                                    <div>
-				  <!-- /#task-sidebar -->
-				  <div class="tab-pane fade" id="setting-sidebar">
-					<ul class="sidebar-menu">
-						<li class="static">ACCOUNT SETTING</li>
-					</ul>
-				  </div><!-- /#setting-sidebar -->
-				</div><!-- /.tab-content -->
-			</div><!-- /.sidebar-right -->
-			<!-- END SIDEBAR RIGHT -->
-			
-			
-			
-			<!-- BEGIN PAGE CONTENT -->
-			<div class="page-content">
-				
-				
-				<div class="container-fluid">
-					<!-- Begin page heading -->
-					<h1 class="page-heading">Carrito de compras <small>Detalle de productos</small></h1>
-					<!-- End page heading -->
-				
-					<!-- Begin breadcrumb -->
-					<ol class="breadcrumb default square rsaquo sm">
-						<li><a href="index.html"><i class="fa fa-home"></i></a></li>
-						<li><a href="#fakelink">Productos</a></li>
-						<li class="active">Carrito de compras</li>
-					</ol>
-					<!-- End breadcrumb -->
-					
-					<div class="the-box no-border">
-						<div class="table-responsive">
-						</div><!-- /.table-responsive -->
-						<p class="text-right">
-                                                <button class="btn btn-warning"><i class="fa fa-refresh"></i> Update cart</button>
-						<button class="btn btn-success"><i class="fa fa-check"></i> Check pout</button>
-						</p>
-					</div><!-- /.the-box no-border -->
-					
-					
-				
-				</div><!-- /.container-fluid -->
-				
-				
-				
-				<!-- BEGIN FOOTER -->
-				<footer>
-					&copy; 2014 <a href="#fakelink">Altuve</a><br />
-					Sistema de distribución
-				</footer>
-				<!-- END FOOTER -->
-				
-				
-			</div><!-- /.page-content -->
-		</div><!-- /.wrapper -->
-		<!-- END PAGE CONTENT -->
-		
-		
-	
-		
-		
-		
-		<!--
-		===========================================================
-		END PAGE
-		===========================================================
-		-->
-		
-		<!--
-		===========================================================
-		Placed at the end of the document so the pages load faster
-		===========================================================
-		-->
-		<!-- MAIN JAVASRCIPT (REQUIRED ALL PAGE)-->
 		<script src="<?=base_url()?>assets/js/jquery.min.js"></script>
 		<script src="<?=base_url()?>assets/js/bootstrap.min.js"></script>
 		<script src="<?=base_url()?>assets/plugins/retina/retina.min.js"></script>

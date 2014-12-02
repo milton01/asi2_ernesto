@@ -34,4 +34,22 @@ public function __construct()
         $this->load->view('includes/template', $data);
     }
     
+    function agregar_estatus() {
+        //Se define que vista
+        $data['main'] = 'signup_estatus';
+        //Se preparan los parametros de la vista
+        $data['title'] = 'Registro de usuario | Altuve';
+        //Se carga la vista con plantilla
+        $this->load->view('includes/template', $data);
+    }
+    
+    function agregar_tipo_mov_inventario() {
+        //Se define que vista
+        $data['main'] = 'signup_tipo_mov_invent';
+        //Se preparan los parametros de la vista
+        $data['title'] = 'Registro de usuario | Altuve';
+        //Se carga la vista con plantilla
+        $this->load->view('includes/template', $data);
+    }
+    
 }

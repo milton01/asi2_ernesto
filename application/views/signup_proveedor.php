@@ -55,7 +55,7 @@
                     <input type="email" class="form-control" />
                 </div>
                 <br/>
-                <button class="btn btn-success btn-block">Registrarse</button>
+                <button class="btn btn-success btn-block">Guardar</button>
             </form>
         </div><!-- col-sm-6 -->
 
