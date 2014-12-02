@@ -67,55 +67,53 @@
                                     <li>
 					<?php echo anchor('pedido', 'Ver pedido');?>
                                     </li>
-                                   <li class="inactive">
-                                            <?php echo anchor('ruta', 'Llenar camion.................>');?>
-                                        <ul class="submenu visible">
-                                            <li><?php echo anchor('ruta', 'Agregar pedidos a la ruta');?></li>
-                                            <li><?php echo anchor('ruta', 'Facturacion de pedidos');?></li>
-                                        </ul>
-                                    </li>
-                                    <li class="active selected">
-                                            <?php echo anchor('ruta', 'Liquidacion de rutas');?>
-                                    </li>
-                                    <li class="inactive">
-                                            <?php echo anchor('ruta', 'Ventas directas...........>');?> 
-                                        <ul class="submenu visible">
-                                            <li><?php echo anchor('ruta', 'Agregar pedido');?></li>
-                                            <li><?php echo anchor('ruta', 'Facturacion de pedido');?></li>
-                                        </ul>
-                                    </li>
-                                    <li class="active selected">
+                                    <li>
                                             <?php echo anchor('ruta', 'Registro de Compras');?>
                                     </li>
-                                    <li class="inactive">
+                                    <li>
+                                            <?php echo anchor('ruta', 'Liquidacion de rutas');?>
+                                    </li>
+                                   <li>
+                                            <?php echo anchor('ruta', 'Llenar camion.................>');?>
+                                        <ul class="submenu visible">
+                                            <li class="active selected"><?php echo anchor('ruta', 'Agregar pedidos a la ruta');?></li>
+                                            <li class="active selected"><?php echo anchor('ruta', 'Facturacion de pedidos');?></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                            <?php echo anchor('ruta', 'Ventas directas...........>');?> 
+                                        <ul class="submenu visible">
+                                            <li class="active selected"><?php echo anchor('ruta', 'Agregar pedido');?></li>
+                                            <li class="active selected"><?php echo anchor('ruta', 'Facturacion de pedido');?></li>
+                                        </ul>
+                                    </li>
+                                    <li>
                                             <?php echo anchor('ruta', 'Reportes...................>');?>
                                         <ul class="submenu visible">
-                                            <li><?php echo anchor('ruta', 'Compras');?></li>
-                                            <li><?php echo anchor('ruta', 'Inventario');?></li>
-                                            <li><?php echo anchor('ruta', 'Inventario minimo');?></li>
-                                            <li><?php echo anchor('ruta', 'Ventas por ruta');?></li>
-                                            <li><?php echo anchor('ruta', 'Ventas por dia');?></li>
-                                            <li><?php echo anchor('ruta', 'Ventas por mes');?></li>
-                                            <li><?php echo anchor('ruta', 'Ventas por año');?></li>
+                                            <li class="active selected"><?php echo anchor('ruta', 'Compras');?></li>
+                                            <li class="active selected"><?php echo anchor('ruta', 'Inventario');?></li>
+                                            <li class="active selected"><?php echo anchor('ruta', 'Inventario minimo');?></li>
+                                            <li class="active selected"><?php echo anchor('ruta', 'Ventas por ruta');?></li>
+                                            <li class="active selected"><?php echo anchor('ruta', 'Ventas por dia');?></li>
+                                            <li class="active selected"><?php echo anchor('ruta', 'Ventas por mes');?></li>
+                                            <li class="active selected"><?php echo anchor('ruta', 'Ventas por año');?></li>
                                         </ul>
                                     </li>
-                                    <li class="inactive">
+                                   <li>
+                                     
                                             <?php echo anchor('ruta', 'Mantenimientos........>');?>
                                         <ul class="submenu visible">
-                                            <li><?php echo anchor('registro', 'Registrar cliente');?></li>
-                                            <li><?php echo anchor('registro/agregar_empleado', 'Registrar empleado');?></li>
-                                            <li><?php echo anchor('registro/agregar_proveedor', 'Registrar proveedor');?></li>
-                                            <li><?php echo anchor('registro/agregar_estatus', 'Status para diferentes tablas');?></li>
-                                            <li><?php echo anchor('registro/agregar_tipo_mov_inventario', 'Tipo de movimiento de inventario');?></li>
+                                            <li class="active selected"><?php echo anchor('registro', 'Registrar cliente');?></li>
+                                            <li class="active selected"><?php echo anchor('registro/agregar_empleado', 'Registrar empleado');?></li>
+                                            <li class="active selected"><?php echo anchor('registro/agregar_proveedor', 'Registrar proveedor');?></li>
+                                            <li class="active selected"><?php echo anchor('registro/agregar_estatus', 'Status para diferentes tablas');?></li>
+                                            <li class="active selected"><?php echo anchor('registro/agregar_tipo_mov_inventario', 'Tipo de movimiento de inventario');?></li>
                                         </ul>
                                     </li>
-      </ul>
-    </div><!-- leftpanelinner -->
+                                </ul>
+    </div>
   </div>
-				
-			
-			
-		<script src="<?=base_url()?>assets/js/jquery.min.js"></script>
+                <script src="<?=base_url()?>assets/js/jquery.min.js"></script>
 		<script src="<?=base_url()?>assets/js/bootstrap.min.js"></script>
 		<script src="<?=base_url()?>assets/plugins/retina/retina.min.js"></script>
 		<script src="<?=base_url()?>assets/plugins/nicescroll/jquery.nicescroll.js"></script>
