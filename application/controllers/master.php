@@ -6,43 +6,47 @@ class Master extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('Login_Model');
+        $this->load->library(array('pagination', 'cart', 'form_validation','email', 'table'));
+        $this->load->helper('text');
     }
 
-    public function index() {
-        {  // reglas de validación
-        $this->form_validation->set_rules('nombre', 'Usuario', 'required|xss_clean|callback__valid_login');
-        $this->form_validation->set_rules('password', 'Contraseña','required|xss_clean');
-	   
-	$this->form_validation->set_message('required', 'el campo %s es requerido');
-        $this->form_validation->set_message('_valid_login', 'El usuario o contraseña son incorrectos');
-	   
-	$this -> form_validation -> set_error_delimiters('<ul><li>', '</li></ul>');
-     
-		if ($this->form_validation->run() == FALSE){
-                    //Se define que vista
-                    $data['main'] = 'signin';
-                    //Se preparan los parametros de la vista
-                    $data['title'] = 'Altuve | Iniciar sesión';
-                    //Se carga la vista con plantilla
-                    $this->load->view('includes/template', $data);
-        }
-        else
-                {
-                $username = $this->input->post('username');
-                             $data_user = $array = array('user'=> $username, 'logued_in' => TRUE);
+    function index(){       
+    if ($this->input->post('username') and $this->input->post('password')){
+        // reglas de validación
+            $username = $this->input->post('username');        
+            $password = md5($this->input->post('password'));
+            
+            $rol=$this->Login_Model->validar_rol($username,$password);
+            $id_usuario = $this->Login_Model->id_usuario($username, $password);
+            
+            $this->session->set_userdata('id_usuario', $id_usuario);
+            
+            if ($rol=="administrador") {
+                redirect('roles/menu_admin');
+                
+            }else if ($rol=="cliente") {
 
-                // asignamos dos datos a la sesión --> (username y logued_in)									 
-                $this->session->set_userdata($data_user);
+                redirect('roles/menu_cliente');
+
+            }else if ($rol=="bodeguero") {
+
+                redirect('roles/menu_bodeguero');
+                
+            }else if ($rol=="televendedor") {
+                
+                //redirect('roles/menu_bodeguero'); 
+                
+            }
+    }else{                
                 //Se define que vista
-                    $data['main'] = 'menu';
-                    //Se preparan los parametros de la vista
-                    $data['title'] = 'Altuve | Bienvenido';
-                    //Se carga la vista con plantilla
-                    $this->load->view('includes/template', $data);
-                }                
-        }
+                $data['main'] = 'signin';
+                //Se preparan los parametros de la vista
+                $data['title'] = 'Altuve | Administrador';
+                //Se carga la vista con plantilla
+                $this->load->view('includes/template', $data); 
+            
     }
-
+  }
     public function registro() {
         //Se define que vista
         $data['main'] = 'signup';
@@ -69,5 +73,32 @@ class Master extends CI_Controller {
         //Se carga la vista con plantilla
         $this->load->view('includes/template', $data);
     }
+    
+    function _valid_login($username,$password)
+	{ 
+	    $username = $this->input->post('username');
+	    $password = md5($this->input->post('password'));
+            return $this->Login_Model->valid_user($username,$password);
+	}
+
+function valid_login_ajax(){
+    //verificamos si la petición es via ajax
+    if($this->input->is_ajax_request()){
+        if($this->input->post('username')!==''){
+            $username = $this->input->post('username');
+            $this->Login_Model->valid_user_ajax($username);
+
+        }
+    }else{
+		redirect('login');
+    }
+
+} // fin del método valid_login_ajax
+	
+function logout(){
+          	
+         $this->session->sess_destroy(); 
+		 redirect('login');		
+}
 
 }
