@@ -59,7 +59,7 @@ function index()
                 redirect('pedido');
 
             }else{
-                echo $rol;
+                //echo $rol;
                 $data['title'] = 'Altuve -  Iniciar sesión';            
                 $this->load->view('admin/login',$data);  
             }

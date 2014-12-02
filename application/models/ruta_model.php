@@ -105,12 +105,12 @@ class Ruta_model extends CI_Model{
     
     /* Funciones de manipulacion de datos */    
 
-    function estado_pedido($rt_id, $st_id){
+    function estado_pedido($pd_id, $st_id){
 
         $data = array( 
                         'status_id' => $st_id
                         );
-        $this->db->where('id', $rt_id);           
+        $this->db->where('id', $pd_id);           
         return $this->db->update('pedido',$data);        
     }
     
