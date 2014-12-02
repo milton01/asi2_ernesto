@@ -60,5 +60,14 @@ class Master extends CI_Controller {
         //Se carga la vista con plantilla
         $this->load->view('includes/template', $data);
     }
+    
+     public function olvido_password() {
+        //Se define que vista
+        $data['main'] = 'forgot_password';
+        //Se preparan los parametros de la vista
+        $data['title'] = 'Altuve | Olvide password';
+        //Se carga la vista con plantilla
+        $this->load->view('includes/template', $data);
+    }
 
 }
