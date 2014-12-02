@@ -28,9 +28,11 @@
 					</tr>
 				</thead>
 				<tbody>
-					<? foreach ( $pedidos->result() as $pedido ) : ?>
+					<?
+                                        print_r($pedidos);
+                                        foreach ( $pedidos->result() as $pedido ) : ?>
 					<tr>
-						<td><?=$pedido->id_venta?></td>
+						<td><?php echo 'Hola';?> <?=$pedido->id_venta?></td>
 						<td><?=$pedido->fecha_venta?></td>
 						<td><?=$pedido->fecha_pedido?></td>
 						<td><?=$pedido->razon_social?></td>

@@ -68,8 +68,7 @@
                                     </li>
                                     <li>
 					<?php echo anchor('master', 'Carrito de compras');?>
-                                    </li>                               
-                                    <li>
+                                    </li>                               <li>
 					<?php echo anchor('pedido', 'Ver pedido');?>
                                     </li>
                                    <li class="inactive">
@@ -89,15 +88,9 @@
                                             <li><?php echo anchor('ruta', 'Facturacion de pedido');?></li>
                                         </ul>
                                     </li>
-                                    <li class="active selected">
-                                            <?php echo anchor('ruta', 'Registro de Compras');?>
-                                    </li>
                                     <li class="inactive">
                                             <?php echo anchor('ruta', 'Reportes...................>');?>
                                         <ul class="submenu visible">
-                                            <li><?php echo anchor('ruta', 'Compras');?></li>
-                                            <li><?php echo anchor('ruta', 'Inventario');?></li>
-                                            <li><?php echo anchor('ruta', 'Inventario minimo');?></li>
                                             <li><?php echo anchor('ruta', 'Ventas por ruta');?></li>
                                             <li><?php echo anchor('ruta', 'Ventas por dia');?></li>
                                             <li><?php echo anchor('ruta', 'Ventas por mes');?></li>
@@ -114,10 +107,40 @@
                                             <li><?php echo anchor('ruta', 'Tipo de movimiento de inventario');?></li>
                                         </ul>
                                     </li>
+                                    <div class="visible-xs hidden-sm hidden-md hidden-lg">   
+            <div class="media userlogged">
+                <img alt="" src="images/photos/loggeduser.png" class="media-object">
+                <div class="media-body">
+                    <h4>José López</h4>
+                </div>
+            </div>
+          
+            <h5 class="sidebartitle actitle">Cuenta</h5>
+            <ul class="nav nav-pills nav-stacked nav-bracket mb30">
+              <li><a href="profile.html"><i class="fa fa-user"></i> <span>Perfil</span></a></li>
+              <li><a href="#"><i class="fa fa-cog"></i> <span>Configuración de cuenta</span></a></li>
+              <li><a href="#"><i class="fa fa-question-circle"></i> <span>Ayuda</span></a></li>
+              <li><a href="signout.html"><i class="fa fa-sign-out"></i> <span>Cerrar sesión</span></a></li>
+            </ul>
+        </div>
+      
+      <h5 class="sidebartitle">Menú</h5>
+      <ul class="nav nav-pills nav-stacked nav-bracket">
+        <li class="active"><a href="index.html"><i class="fa fa-home"></i> <span>Inicio</span></a></li>
+        <li><a href="usuarios.html"><i class="fa fa-user"></i> <span>Usuarios</span></a></li>
+        <li><a href="transportes.html"><i class="fa fa-truck"></i> <span>Transporte</span></a></li>
+        <li><a href="clientes.html"><i class="fa fa-suitcase"></i> <span>Clientes</span></a></li>
+        <li class="nav-parent"><a href="tables.html"><i class="fa fa-th-list"></i> <span>Pedidos</span></a>
+        <ul class="children">
+            <li><a href="#.html"><i class="fa fa-caret-right"></i> link</a></li>
+            <li><a href="#.html"><i class="fa fa-caret-right"></i> link</a></li>
+            <li><a href="#.html"><i class="fa fa-caret-right"></i> link</a></li>
+          </ul>
+        </li>
       </ul>
     </div><!-- leftpanelinner -->
   </div>
-				
+				</ul>
 			</div><!-- /.sidebar-left -->
 			<!-- END SIDEBAR LEFT -->
 			
@@ -145,7 +168,55 @@
 					</ul>
 				  </div>
                                     <div>
-				  <!-- /#task-sidebar -->
+				  <div class="tab-pane fade" id="task-sidebar">
+					<ul class="sidebar-menu sidebar-task">
+						<li class="static">UNCOMPLETED</li>
+						<li><a href="#fakelink" data-toggle="tooltip" title="in progress" data-placement="left">
+							<i class="fa fa-clock-o icon-task-sidebar progress"></i>
+							Creating documentation
+							<span class="small-caps">Deadline : Next week</span>
+						</a></li>
+						<li><a href="#fakelink" data-toggle="tooltip" title="uncompleted" data-placement="left">
+							<i class="fa fa-exclamation-circle icon-task-sidebar uncompleted"></i>
+							Eating sand
+							<span class="small-caps">Deadline : 2 hours ago</span>
+						</a></li>
+						<li><a href="#fakelink" data-toggle="tooltip" title="uncompleted" data-placement="left">
+							<i class="fa fa-exclamation-circle icon-task-sidebar uncompleted"></i>
+							Sending payment
+							<span class="small-caps">Deadline : 2 seconds ago</span>
+						</a></li>
+						<li><a href="#fakelink" data-toggle="tooltip" title="in progress" data-placement="left">
+							<i class="fa fa-clock-o icon-task-sidebar progress"></i>
+							Uploading new version
+							<span class="small-caps">Deadline : Tomorrow</span>
+						</a></li>
+						
+						<li class="static">COMPLETED</li>
+						<li><a href="#fakelink" data-toggle="tooltip" title="completed" data-placement="left">
+							<i class="fa fa-check-circle-o icon-task-sidebar completed"></i>
+							Drinking coffee
+							<span class="small-caps">Completed : 10 hours ago</span>
+						</a></li>
+						<li><a href="#fakelink" data-toggle="tooltip" title="completed" data-placement="left">
+							<i class="fa fa-check-circle-o icon-task-sidebar completed"></i>
+							Walking to nowhere
+							<span class="small-caps">Completed : Yesterday</span>
+						</a></li>
+						<li><a href="#fakelink" data-toggle="tooltip" title="completed" data-placement="left">
+							<i class="fa fa-check-circle-o icon-task-sidebar completed"></i>
+							Sleeping under bridge
+							<span class="small-caps">Completed : Feb 10 2014</span>
+						</a></li>
+						<li><a href="#fakelink" data-toggle="tooltip" title="completed" data-placement="left">
+							<i class="fa fa-check-circle-o icon-task-sidebar completed"></i>
+							Buying some cigarettes
+							<span class="small-caps">Completed : Jan 15 2014</span>
+						</a></li>
+						
+						<li class="static text-center"><button class="btn btn-success btn-sm">See all tasks</button></li>
+					</ul>
+				  </div><!-- /#task-sidebar -->
 				  <div class="tab-pane fade" id="setting-sidebar">
 					<ul class="sidebar-menu">
 						<li class="static">ACCOUNT SETTING</li>
