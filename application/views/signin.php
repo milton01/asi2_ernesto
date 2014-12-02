@@ -6,7 +6,7 @@
 
             <div class="signin-info">
                 <div class="logopanel">
-                    <img src="images/logo-login.png"/>
+                     <?=img('images/logo-login.png');?>
                 </div><!-- logopanel -->
 
                 <div class="mb20"></div>
