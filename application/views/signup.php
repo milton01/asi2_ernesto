@@ -19,7 +19,7 @@
 
             <form method="post" action="#">
                     
-                <h3 class="nomargin">Registrate</h3>
+                <h3 class="nomargin">Registrar Cliente</h3>
                 <p class="mt5 mb20"><?php echo anchor('master/index', '<small>¿Ya tienes cuenta? Ir a LOGIN</small>', 'title="¿Ya tienes cuenta?"');?></p>
                 <div class="mb10">
                     <label class="control-label">Nombre de usuario</label>
