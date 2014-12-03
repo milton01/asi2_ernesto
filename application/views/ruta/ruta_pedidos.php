@@ -106,6 +106,10 @@
 
     </div><!-- row -->
     
+    <div>
+        <?=anchor('ruta', 'Cancelar', 'title="Cancelar" class="btn btn-primary btn-sm"');?>
+    </div>
+    
     
 
     <div class="signup-footer">

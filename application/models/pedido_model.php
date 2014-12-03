@@ -44,7 +44,7 @@ class Pedido_model extends CI_Model{
                                     pr.codigo AS pr_codigo,
                                     concat (cat.descripcion,' ',                                     
                                     mar.nombre,' ', 
-                                    pr.descripcion) AS nombre_prod,
+                                    pr.descripcion) AS pr_descripcion,
                                     dp.cantidad AS dp_cantidad
 					FROM 
                                     detalle_pedido dp, producto pr, marca mar, categoriap cat 
