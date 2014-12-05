@@ -79,6 +79,7 @@
                 </thead>
                 <tbody>
 <?php
+    $j=0;
     if ($query_pd_asignados){
         $j=1;
         foreach ($query_pd_asignados->result() as $row)
@@ -107,7 +108,10 @@
     </div><!-- row -->
     
     <div>
-        <?=anchor('ruta', 'Cancelar', 'title="Cancelar" class="btn btn-primary btn-sm"');?>
+        <?php
+            if ($j!=0) echo anchor('ruta/cargar_transporte/'.$rt_id, 'Cargar Transporte', 'title="Cargar Transporte" class="btn btn-success btn-sm"')." ";            
+            echo anchor('ruta', 'Cancelar', 'title="Cancelar" class="btn btn-primary btn-sm"');
+        ?>
     </div>
     
     

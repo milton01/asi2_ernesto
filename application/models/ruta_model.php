@@ -19,7 +19,8 @@ class Ruta_model extends CI_Model{
         $query = $this->db->query("SELECT
                                     rt.id AS rt_id,
                                     rt.nombre AS rt_nombre,
-                                    IFNULL((SELECT tn.placa FROM transporte tn WHERE tn.ruta_id = rt.id), 'N/A') AS tn_placa
+                                    IFNULL((SELECT tn.placa FROM transporte tn WHERE tn.ruta_id = rt.id), 'N/A') AS tn_placa,
+                                    IFNULL((SELECT tn.status_id FROM transporte tn WHERE tn.ruta_id = rt.id), 'N/A') AS tn_estado
                                   FROM
                                     ruta rt");
         //Devolvemos al controlador los datos
@@ -73,7 +74,7 @@ class Ruta_model extends CI_Model{
         //Define el arreglo con parametros escapados para la query
         $data = array();
         $data[] = $rt_id; //Define la ruta
-        $data[] = 3; //Define el estado despachado
+        $data[] = 7; //Define el estado confirmado
         
         //Query directa            
         $query = $this->db->query("SELECT                                     
@@ -113,24 +114,60 @@ class Ruta_model extends CI_Model{
         $this->db->where('id', $pd_id);           
         return $this->db->update('pedido',$data);        
     }
-    
-    function insertar_inventario($rt_id, $pr_id, $mv_id, $al_id, $in_cantidad){
-        
-        
 
-        $data = array(  
-                        'id' => $this->max_inventario(),
-                        'no_transaccion' => $rt_id,                        
-                        'codigoprod' => $pr_id,                        
-                        'tipo_mov' => $mv_id,
-                        'movimientoid' => $mv_id,
-                        'almacenid' => $al_id,
-                        'cantidad' => $in_cantidad,
-                        'fecha_mov' => $this->fecha_ahora()
+    function estado_transporte($tr_id, $st_id){
+
+        $data = array( 
+                        'status_id' => $st_id
                         );
-        return $this->db->insert('inventario',$data);   
-
+        $this->db->where('placa', $tr_id);           
+        return $this->db->update('transporte',$data);
     }
+
+    
+    function insertar_carga($rt_id, $tr_id, $em_id){
+
+        $data = array(                          
+                        'fecha' => $this->fecha_ahora(),                        
+                        'hora' => $this->tiempo_ahora(),                        
+                        'descripcion' => "Carga de producto",
+                        'transporte_placa' => $tr_id,
+                        'empleado_id' => $em_id,
+                        'ruta_id' => $rt_id
+                        
+                    );
+        $this->db->insert('carga',$data);
+        return $this->db->insert_id();
+    }
+
+    function insertar_detalle_carga($dp_cantidad, $pr_codigo, $cr_id){
+
+        $data = array(                          
+                        'cantidad' => $dp_cantidad,                        
+                        'codigoprod' => $pr_codigo,                        
+                        'carga_id' => $cr_id
+                    );
+        $this->db->insert('detalle_carga_producto',$data);
+        return $this->db->insert_id();
+    }
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
     function actualizar_detalle_ruta($dp_id, $dp_cantidad){
         $data = array( 
