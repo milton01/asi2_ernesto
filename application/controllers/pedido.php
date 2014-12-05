@@ -114,8 +114,8 @@ class pedido extends CI_Controller {
                     $in_actualizado_r = $this->pedido_model->actualizar_inventario($pd_id, $query_dp->codigoprod, 6, 2, $prcn[$i]);
                 }
             }
-            //Actualiza el estado del pedido a despachado
-            $pedido_actualizado = $this->pedido_model->estado_pedido($pd_id, 2);
+            //Actualiza el estado del pedido a no despachado
+            $pedido_actualizado = $this->pedido_model->estado_pedido($pd_id, 3);
             $this->db->trans_complete();
             
             //Retorna a principal con cambios guardados
@@ -144,7 +144,7 @@ class pedido extends CI_Controller {
 
             }
             //Actualiza el estado del pedido a rechazado
-            $pedido_actualizado = $this->pedido_model->estado_pedido($pd_id, 4);
+            $pedido_actualizado = $this->pedido_model->estado_pedido($pd_id, 2);
             $this->db->trans_complete();
             
             //Retorna a principal con cambios guardados

@@ -29,8 +29,8 @@ class ruta extends CI_Controller {
         
     public function ruta_pedidos($rt_id, $excede=null) {        
         //Se ejecuta la consulta
-        $query_pd_sinasignar = $this->ruta_model->listar_ruta_pedidos($rt_id, 2); //Estado no despachado
-        $query_pd_asignados = $this->ruta_model->listar_ruta_pedidos($rt_id, 7); //Estado confirmado
+        $query_pd_sinasignar = $this->ruta_model->listar_ruta_pedidos($rt_id, 3); //Estado no despachado
+        $query_pd_asignados = $this->ruta_model->listar_ruta_pedidos($rt_id, 8); //Estado confirmado
         
         //Consultas de encabezado
         $query_ruta = $this->ruta_model->mostrar_ruta($rt_id);
@@ -87,7 +87,7 @@ class ruta extends CI_Controller {
             
                 $this->db->trans_start();
                     //Actualiza el estado del ruta a despachado
-                    $pedido_actualizado = $this->ruta_model->estado_pedido($pd_id, 7); //Estado confirmado
+                    $pedido_actualizado = $this->ruta_model->estado_pedido($pd_id, 8); //Estado confirmado
                 $this->db->trans_complete();
             
             }else{
@@ -105,7 +105,7 @@ class ruta extends CI_Controller {
             
             $this->db->trans_start();
                 //Actualiza el estado del ruta a despachado
-                $pedido_actualizado = $this->ruta_model->estado_pedido($pd_id, 2); //Estado no despachado
+                $pedido_actualizado = $this->ruta_model->estado_pedido($pd_id, 3); //Estado no despachado
             $this->db->trans_complete();
                 
         }        
@@ -128,7 +128,7 @@ class ruta extends CI_Controller {
                 $carga_insertada = $this->ruta_model->insertar_carga($rt_id, $row_transporte->placa, 1); //ID de empleado (tercer parametro) deberia ser cargadod esde variable de sesion
 
                 //Extrae los pedidos
-                $query_pd_asignados = $this->ruta_model->listar_ruta_pedidos($rt_id, 7); //Estado confirmado
+                $query_pd_asignados = $this->ruta_model->listar_ruta_pedidos($rt_id, 8); //Estado confirmado
                 if ($query_pd_asignados){
                     foreach ($query_pd_asignados->result() as $row_pd_asignados)
                     {
@@ -144,12 +144,12 @@ class ruta extends CI_Controller {
                         }
                         
                         //Actualiza el estado del ruta a despachado
-                        $pedido_actualizado = $this->ruta_model->estado_pedido($row_pd_asignados->pd_id, 3); //Estado despachado
+                        $pedido_actualizado = $this->ruta_model->estado_pedido($row_pd_asignados->pd_id, 4); //Estado despachado
                     }
                 }
 
                 //Actualiza el estado del transporte
-                $transporte_actualizado = $this->ruta_model->estado_transporte($row_transporte->placa, 9); //Estado no despachado
+                $transporte_actualizado = $this->ruta_model->estado_transporte($row_transporte->placa, 10); //Estado En ruta
                 
             $this->db->trans_complete();
                 

@@ -74,7 +74,7 @@ class Ruta_model extends CI_Model{
         //Define el arreglo con parametros escapados para la query
         $data = array();
         $data[] = $rt_id; //Define la ruta
-        $data[] = 7; //Define el estado confirmado
+        $data[] = 8; //Define el estado confirmado
         
         //Query directa            
         $query = $this->db->query("SELECT                                     

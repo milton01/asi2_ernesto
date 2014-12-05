@@ -21,8 +21,8 @@
         $j=1;
         foreach ($query->result() as $row)
         {
-            if($row->tn_estado==8) $boton = anchor('ruta/ruta_pedidos/'.$row->rt_id, 'Pedidos', 'title="Pedidos de ruta" class="btn btn-success btn-sm"');
-            else if($row->tn_estado==9) $boton = anchor('#'.$row->rt_id, 'En Ruta', 'title="Transporte en ruta" class="btn btn-warning btn-sm disabled"');
+            if($row->tn_estado==9) $boton = anchor('ruta/ruta_pedidos/'.$row->rt_id, 'Pedidos', 'title="Pedidos de ruta" class="btn btn-success btn-sm"');
+            else if($row->tn_estado==10) $boton = anchor('#'.$row->rt_id, 'En Ruta', 'title="Transporte en ruta" class="btn btn-warning btn-sm disabled"');
             else $boton = anchor('#'.$row->rt_id, 'Sin Vehiculo', 'title="No hay vehiculo asignado" class="btn btn-info btn-sm disabled"');
             echo '<tr>
                     <td>'.$j.'</td>

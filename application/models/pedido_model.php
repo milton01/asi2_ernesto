@@ -17,7 +17,7 @@ class Pedido_model extends CI_Model{
     function listar_pedidos(){
         //Define el arreglo con parametros escapados para la query
         $data = array();
-        $data[] = 1; //Define el estado
+        $data[] = 1; //Define el estado pendiente
         
         //Query directa            
         $query = $this->db->query("SELECT 
