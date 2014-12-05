@@ -28,7 +28,7 @@
             echo '<tr>
                     <td>'.$j.'</td>
                     <td>'.$row->pr_codigo.'</td>
-                    <td>'.$row->nombre_prod.'</td>
+                    <td>'.$row->pr_descripcion.'</td>
                     <td>
                         <input id="prid[]" name="dpid[]" type="hidden" value="'.$row->dp_id.'">
                         <input id="prid[]" name="prid[]" type="hidden" value="'.$row->pr_codigo.'">
